@@ -1,9 +1,9 @@
 import chn.util.*;
 /**
- * Write a description of class Reverse here.
+ * Takes in a string from the user and displays the recursively reversed version
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Annabel Prodnuk
+ * @version 11/7/18
  */
 public class Reverse
 {
@@ -16,11 +16,14 @@ public class Reverse
         System.out.println("Welcome to the recursive string revsersinator!\n");
         do
         {
+            //get user input
             System.out.print("\nEnter the string you would like to reverse: ");
             input = key.readLine();
             
+            //display results
             System.out.println(reverse(input) + "\n\n");
             
+            //check if user wants to continue
             System.out.print("Would you like to continue? [true/false]: ");
             flag = key.readBoolean();
         }
@@ -32,10 +35,12 @@ public class Reverse
     {
         if(str.length() == 1)
         {
+            //nothing left to process
             return str;
         }
         else
         {
+            //take the last letter and process the rest of the string
             return str.substring(str.length() - 1)
                 + reverse(str.substring(0, str.length() - 1));
         }
